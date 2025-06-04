@@ -13,6 +13,13 @@ except:
     print("Erro ao conectar ao servidor")
     exit()
 
+s.send(b"SENSOR")
+response = s.recv(10).decode().strip()
+if response != "OK":
+    print("Erro na negociação de tipo de conexão")
+    s.close()
+    exit()
+
 # Envia o ID do sensor e aguarda confirmação
 s.send(SENSOR_ID.encode())
 response = s.recv(10).decode().strip()

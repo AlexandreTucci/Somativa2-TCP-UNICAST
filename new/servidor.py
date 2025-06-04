@@ -104,7 +104,7 @@ print(f'Aguardando conexões em {PORTA}')
 while True:
     conn, addr = s.accept()
     print(f'Recebi uma conexão de {addr}')
-    
+    print(f'conn: {conn}')
     tipo = conn.recv(10).decode().strip()
     conn.send(b'OK')  # Confirmação para o cliente
     
