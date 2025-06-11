@@ -1,10 +1,10 @@
+# Integrantes: Alexandre Andrioli Tucci, João Victor Saboya Ribeiro de Carvalho, Arthur de Oliveira Carvalho
 import socket
 import sys
 import threading
 import time
 from datetime import datetime
 
-# Estruturas globais para armazenar dados e conexões
 SENSOR_DATA = {}
 SENSORES = {}
 CONSOLE = None
@@ -84,7 +84,6 @@ except:
     print('# Erro de bind')
     sys.exit()
 
-# Obtém o nome do host e IP local para exibir informações do servidor
 hostname = socket.gethostname()
 hostip = socket.gethostbyname(hostname)
 print(f'Host: {hostname} IP: {hostip}')

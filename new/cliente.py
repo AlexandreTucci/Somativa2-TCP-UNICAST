@@ -1,9 +1,10 @@
+# Integrantes: Alexandre Andrioli Tucci, João Victor Saboya Ribeiro de Carvalho, Arthur de Oliveira Carvalho
 import socket
 import time
 import random
 
 SENSOR_ID = input("Digite o ID do sensor: ")
-HOST = '127.0.0.1'  # Endereço do servidor
+HOST = '127.0.0.1'
 PORTA = int(input("Digite a porta do servidor: "))
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -20,7 +21,6 @@ if response != "OK":
     s.close()
     exit()
 
-# Envia o ID do sensor e aguarda confirmação
 s.send(SENSOR_ID.encode())
 response = s.recv(10).decode().strip()
 if response == "OK":
@@ -31,10 +31,9 @@ else:
     exit()
 
 while True:
-    # Simula leitura de temperatura (15°C a 35°C)
     temperatura = round(random.uniform(10, 40), 1)
     s.send(str(temperatura).encode())
     print(f"Enviado: {temperatura}°C")
-    time.sleep(5)  # Envia a cada 5 segundos
-
+    time.sleep(5)
+    
 s.close()

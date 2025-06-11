@@ -1,3 +1,4 @@
+# Integrantes: Alexandre Andrioli Tucci, João Victor Saboya Ribeiro de Carvalho, Arthur de Oliveira Carvalho
 import socket
 
 HOST = '127.0.0.1'
@@ -10,9 +11,8 @@ except:
     print("Erro ao conectar ao servidor")
     exit()
 
-# Identifica como console
 s.send("CONSOLE".encode())
-s.recv(10)  # Aguarda confirmação
+s.recv(10)
 
 while True:
     comando = input("Digite o comando ('media todos' ou 'sair'): ")
