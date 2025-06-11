@@ -32,7 +32,7 @@ else:
 
 while True:
     # Simula leitura de temperatura (15°C a 35°C)
-    temperatura = round(random.uniform(15, 35), 1)
+    temperatura = round(random.uniform(10, 40), 1)
     s.send(str(temperatura).encode())
     print(f"Enviado: {temperatura}°C")
     time.sleep(5)  # Envia a cada 5 segundos
